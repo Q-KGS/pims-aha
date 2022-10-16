@@ -1,0 +1,20 @@
+server.port: "3000"
+mybatis:
+    mapper-locations: "query/**/*.xml"
+
+--- #dev
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+  datasource:
+    url: "jdbc:sqlserver://localhost:1433;databaseName=EPlan;encrypt=false"
+    username: "crmsa"
+    password: "crmsa!"
+    driver-class-name: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+
+--- #pord
+spring:
+  config:
+    activate:
+      on-profile: "prod"
